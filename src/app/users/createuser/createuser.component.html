@@ -1,0 +1,138 @@
+<h3>Enter Valid User Credential</h3>
+
+<form class="row g-3" [formGroup]="userForm" (submit)="addUsersData()">
+  <div class="col-6">
+    <label for="first" class="form-label">FirstName</label>
+    <input
+      type="text"
+      class="form-control"
+      id="first"
+      formControlName="firstName"
+      [ngStyle]="{
+        border:
+          userForm.get('firstName')?.invalid &&
+          (userForm.get('firstName')?.dirty ||
+            userForm.get('firstName')?.touched)
+            ? '1px solid red'
+            : '1px solid green'
+      }"
+    />
+    <div
+      *ngIf="
+        userForm?.get('firstName')?.invalid &&
+        (userForm?.get('firstName')?.dirty ||
+          userForm?.get('firstName')?.touched)
+      "
+    >
+      <span>Invalid name</span>
+    </div>
+  </div>
+  <div class="col-6">
+    <label for="last" class="form-label">LastName</label>
+    <input
+      type="text"
+      class="form-control"
+      id="last"
+      formControlName="lastName"
+      [ngStyle]="{
+        border:
+          userForm.get('lastName')?.invalid &&
+          (userForm.get('lastName')?.dirty || userForm.get('lastName')?.touched)
+            ? '1px solid red'
+            : '1px solid green'
+      }"
+    />
+    <div
+      *ngIf="
+        userForm?.get('lastName')?.invalid &&
+        (userForm?.get('lastName')?.dirty || userForm?.get('lastName')?.touched)
+      "
+    >
+      <span>Invalid name</span>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      formControlName="emailAdderss"
+      [ngStyle]="{
+        border:
+          userForm.get('emailAdderss')?.invalid &&
+          (userForm.get('emailAdderss')?.dirty ||
+            userForm.get('emailAdderss')?.touched)
+            ? '1px solid red'
+            : '1px solid green'
+      }"
+    />
+    <div
+      *ngIf="
+        userForm?.get('emailAdderss')?.invalid &&
+        (userForm?.get('emailAdderss')?.dirty || userForm?.get('emailAdderss')?.touched)
+      "
+    >
+      <span>Invalid email</span>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="contact" class="form-label">Contact</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="contact"
+      formControlName="contact"
+      [ngStyle]="{
+        border:
+          userForm.get('contact')?.invalid &&
+          (userForm.get('contact')?.dirty || userForm.get('contact')?.touched)
+            ? '1px solid red'
+            : '1px solid green'
+      }"
+    />
+
+    <div
+      *ngIf="
+        userForm?.get('contact')?.invalid &&
+        (userForm?.get('contact')?.dirty || userForm?.get('contact')?.touched)
+      "
+    >
+      <span>Number should be of 10 digits</span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="gender" class="form-label">Gender</label>
+    <select id="gender" class="form-select" formControlName="gender" placeholder="choose...">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="age" class="form-label">Age</label>
+    <input
+      type="text"
+      class="form-control"
+      id="age"
+      formControlName="age"
+      [ngStyle]="{
+        border:
+          userForm.get('age')?.invalid &&
+          (userForm.get('age')?.dirty || userForm.get('age')?.touched)
+            ? '1px solid red'
+            : '1px solid green'
+      }"
+    />
+    <div
+      *ngIf="
+        userForm?.get('age')?.invalid &&
+        (userForm?.get('age')?.dirty || userForm?.get('age')?.touched)
+      "
+    >
+      <span>Age shulde be above 18</span>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
