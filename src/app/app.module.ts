@@ -17,6 +17,7 @@ import { CartComponent } from './cart/cart.component';
 import { CreateuserComponent } from './users/createuser/createuser.component';
 import { ViewusersComponent } from './users/viewusers/viewusers.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     CreateuserComponent,
     ViewusersComponent,
+    NotfoundComponent,
     
   ],
   imports: [

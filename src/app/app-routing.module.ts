@@ -9,6 +9,7 @@ import { MarketComponent } from './market/market.component';
 import { CartComponent } from './cart/cart.component';
 import { CreateuserComponent } from './users/createuser/createuser.component';
 import { ViewusersComponent } from './users/viewusers/viewusers.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path : "cart",
     component : CartComponent
+  },
+  {
+    path : "**",
+    component : NotfoundComponent
   }
 ];
 
